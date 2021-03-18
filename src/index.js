@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
+const methodOverride = require('method-override')
 const handlebars  = require('express-handlebars');
 const db = require('./config/db');
 // Connect to DB
@@ -18,6 +19,15 @@ hlbars.registerHelper("inc", function(value, options)
 {
     return parseInt(value) + 1;
 });
+hlbars.registerHelper('ifCond', function(v1, v2, options) {
+    if(v1 === v2) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
+
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'))
 
 //Set img path
 app.use(express.static(path.join(__dirname, 'public')));

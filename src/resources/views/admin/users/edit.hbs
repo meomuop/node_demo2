@@ -1,0 +1,56 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h3 class="card-title">Chỉnh sửa thông tin người dùng</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <form method="POST" action="/admin/users/{{Users._id}}?_method=PUT">
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <label for="user_form_fullname" class="form-label">Họ tên</label>
+                                    <input type="text" class="form-control" id="fullname" name="fullname" value="{{Users.fullname}}" placeholder="Nhập họ tên đầy đủ.">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="user_form_phone" class="form-label">Điện thoại</label>
+                                    <input type="text" class="form-control" id="phone" name="phone" value="{{Users.phone}}" placeholder="Viết liền.">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <label for="user_form_username" class="form-label">Tên đăng nhập</label>
+                                    <input type="text" class="form-control" id="username" name="username" value="{{Users.username}}" placeholder="Viết liền, không dấu.">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="user_form_password" class="form-label">Mật khẩu</label>
+                                    <input type="password" class="form-control" id="password" name="password" value="{{Users.password}}" placeholder="Từ 6 ký tự trở lên, nên có các kỹ tự đặc biệt.">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-1">
+                                    <img width="65" height="65" src="/{{Users.avatar}}">
+                                </div>
+                                <div class="col-sm-5">
+                                    <label for="inputCity">Ảnh đại diện</label>
+                                    <input class="form-control-file" type="file" id="user_avatar" name="user_avatar">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="user_form_pstatus">Trạng thái</label>
+                                    <select class="form-control" aria-label="Trạng thái" id="status" name="status">
+                                        <option value="1" {{#ifCond Users.status 1}}selected{{/ifCond}}>Kích hoạt</option>
+                                        <option value="0" {{#ifCond Users.status 0}}selected{{/ifCond}}>Khóa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary px-4 float-right">Lưu dữ liệu</button>
+                        </form>
+                    </div>
+                    <!-- card./ -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

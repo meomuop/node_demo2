@@ -3,3 +3,9 @@ h1 {
 
 h2 {
   color: blue; }
+
+.non-underline-link {
+  text-decoration: none !important; }
+
+.list-action-icon {
+  margin-left: 6px; }

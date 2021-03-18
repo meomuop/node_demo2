@@ -1,0 +1,53 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h3 class="card-title">Thêm mới người dùng</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <form method="POST" action="/admin/users/save">
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <label for="user_form_fullname" class="form-label">Họ tên</label>
+                                    <input type="text" class="form-control" id="fullname" name="fullname" value="" placeholder="Nhập họ tên đầy đủ.">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="user_form_phone" class="form-label">Điện thoại</label>
+                                    <input type="text" class="form-control" id="phone" name="phone" value="" placeholder="Viết liền.">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <label for="user_form_username" class="form-label">Tên đăng nhập</label>
+                                    <input type="text" class="form-control" id="username" name="username" value="" placeholder="Viết liền, không dấu.">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="user_form_password" class="form-label">Mật khẩu</label>
+                                    <input type="password" class="form-control" id="password" name="password" value="" placeholder="Từ 6 ký tự trở lên, nên có các kỹ tự đặc biệt.">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <label for="inputCity">Ảnh đại diện</label>
+                                    <input class="form-control-file" type="file" id="user_avatar" name="user_avatar">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="user_form_pstatus">Trạng thái</label>
+                                    <select class="form-control" aria-label="Trạng thái" id="status" name="status">
+                                        <option value="1">Kích hoạt</option>
+                                        <option value="0">Khóa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary px-4 float-right">Lưu dữ liệu</button>
+                        </form>
+                    </div>
+                    <!-- card./ -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
