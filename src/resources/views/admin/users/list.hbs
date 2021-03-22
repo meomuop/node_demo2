@@ -39,7 +39,7 @@
                                     <td>{{#if this.status}}Kích hoạt{{else}}Khóa{{/if}}</td>
                                     <td>
                                         <a href="users/edit/{{this._id}}" class="list-action-icon"><i class="nav-icon fas fa-pencil-alt"></i></a>
-                                        <a href="javascript: remove_confirm('{{this._id}}')" class="list-action-icon" id="user_delete_{{this._id}}"><i class="nav-icon fas fa-trash"></i></a>
+                                        <a href="javascript: remove_confirm('users','{{this._id}}')" class="list-action-icon" id="user_delete_{{this._id}}"><i class="nav-icon fas fa-trash"></i></a>
                                         {{#ifCond this.status 1}}
                                         <a href="users/inactive/{{this._id}}" class="list-action-icon"><i class="nav-icon fas fa-lock"></i></a>
                                         {{else}}

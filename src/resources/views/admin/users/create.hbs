@@ -2,13 +2,19 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
+                {{#each errors}}
+                <div id="user_alert" class="alert alert-danger alert-dismissible fade show">
+                    <strong>Error!</strong> {{this}}
+                    <button type="button" class="close" data-dismiss="alert" onclick="javascript: set_display('user_alert', 'none')" >&times;</button>
+                </div>
+                {{/each}}
                 <div class="card mt-3">
                     <div class="card-header">
-                        <h3 class="card-title">Thêm mới người dùng</h3>
+                        <h3 class="card-title">Thêm mới người dùng </h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <form method="POST" action="/admin/users/save">
+                        <form method="POST" action="/admin/users/save" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <div class="col-sm-6">
                                     <label for="user_form_fullname" class="form-label">Họ tên</label>
@@ -32,7 +38,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-6">
                                     <label for="inputCity">Ảnh đại diện</label>
-                                    <input class="form-control-file" type="file" id="user_avatar" name="user_avatar">
+                                    <input class="form-control-file" type="file" id="avatar" name="avatar">
                                 </div>
                                 <div class="col-sm-6">
                                     <label class="form-label" for="user_form_pstatus">Trạng thái</label>

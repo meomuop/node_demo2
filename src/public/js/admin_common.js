@@ -1,4 +1,4 @@
-function remove_confirm(id){
+function remove_confirm(controller,id){
     $( "#dialog-confirm" ).dialog({
         resizable: false,
         height: "auto",
@@ -6,7 +6,7 @@ function remove_confirm(id){
         modal: true,
         buttons: {
         "Xóa": function() {
-            window.location.href = "users/delete/"+id;
+            window.location.href = controller+"/delete/"+id;
         },
         "Hủy": function() {
             $( this ).dialog( "close" );
@@ -21,4 +21,8 @@ function delete_confirmation(url) {
 
 function redirect(url) {
     window.location.assign(url);
+}
+
+function set_display(id, status){
+    document.getElementById(id).style.display = status;
 }

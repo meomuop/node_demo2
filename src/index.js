@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override')
 const handlebars  = require('express-handlebars');
+const fileUpload = require('express-fileupload');
 const db = require('./config/db');
 // Connect to DB
 db.connect();
@@ -28,6 +29,9 @@ hlbars.registerHelper('ifCond', function(v1, v2, options) {
 
 // override with POST having ?_method=DELETE
 app.use(methodOverride('_method'))
+
+// upload file
+app.use(fileUpload());
 
 //Set img path
 app.use(express.static(path.join(__dirname, 'public')));
